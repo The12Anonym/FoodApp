@@ -4,16 +4,11 @@ angular.module('starter.controllers', [])
             //alert("hallo");
         })
 
-        .controller('RezepteCtrl', function ($scope, rezepte, $stateParams) {
+        .controller('RezepteCtrl', function ($scope, rezepte, $stateParams, storage) {
+            
+            $scope.Gerichte = storage.gerichte();
             $scope.Rezepte = rezepte.all();
             $scope.rezept = rezepte.get($stateParams.rezeptId);
-            
-            //alert("test");
-        })
-
-        
-
-        .controller('AddCtrl', function ($scope) {
-            $scope.add = "hinzufügen";
-            //alert("Hinzufügen");
+            alert("test");
+            alert(storage.gerichte);
         });
