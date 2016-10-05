@@ -8,7 +8,11 @@ angular.module('starter.services', [])
     id: 0,
     name: 'Spaghetti',
     dauer: 'ca. 30 min',
-    img: 'img/1.jpg'
+    img: 'img/1.jpg',
+    zubereitung: 'Lange kochen; salzen',
+    zutaten: 'Nudelteig; Salz',
+    beschreibung: 'ein traitionell italienischen Gericht',
+    kategorie: '1'
   }, {
     id: 1,
     name: 'Lasagne',

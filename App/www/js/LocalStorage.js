@@ -1,6 +1,6 @@
 angular.module('localstorage', [])
-
-        .factory('storage', function () {
+.factory('storage', function() {
+      
 
             var Gerichtlist = [];
             var Kategorielist = [];
