@@ -2,13 +2,14 @@
 var Gerichtlist = [];
 var Kategorielist = [];
 
-    function Gericht (GeId, GeName, GeZutaten, GeZubereitung, GeBeschreibung, KaId)
+    function Gericht (GeId, GeName, GeZutaten, GeZubereitung, GeBeschreibung, GeZeit, KaId)
     {
         this.myId = GeId;
         this.myName = GeName;
         this.myZutaten = GeZutaten;
         this.myZubereitung = GeZubereitung;
         this.myBeschreibung = GeBeschreibung;
+        this.myZeit = GeZeit;
         this.myKaId = KaId;
         Gerichtlist.push(this);
     }
@@ -40,6 +41,7 @@ var Kategorielist = [];
     var GeZutaten = localStorage.getItem('Gericht' + z + 'ZUTATEN');
     var GeZubereitung = localStorage.getItem('Gericht' + z + 'ZUBEREITUNG');
     var GeBeschreibung = localStorage.getItem('Gericht' + z + 'BESCHREIBUNG');
+    var GeZeit = localStorage.getItem('Gericht' + z + 'Zeit');
     var KaId = localStorage.getItem('Gericht' + z + 'KAID');
     var Rezept = new Gericht(GeId, GeName, GeZutaten, GeZubereitung, GeBeschreibung, KaId);
     }
@@ -47,7 +49,7 @@ var Kategorielist = [];
     for(var w = 0, e = localStorage.getItem('KategorieANZAHL'); w < e;w++)
     {
     var KaId = localStorage.getItem('Kategorie' + w + 'ID');
-    var KaName = localStorage.setItem('Kategorie' + w + 'NAME');
+    var KaName = localStorage.getItem('Kategorie' + w + 'NAME');
     var categorie = new Kategorie(KaId, KaName);
     }
     var testtest = Kategorielist[1];
@@ -65,6 +67,7 @@ var Kategorielist = [];
     localStorage.setItem('Gericht' + i + 'ZUTATEN', objekt.myZutaten);
     localStorage.setItem('Gericht' + i + 'ZUBEREITUNG', objekt.myZubereitung);
     localStorage.setItem('Gericht' + i + 'BESCHREIBUNG', objekt.myBeschreibung);
+    localStorage.setItem('Gericht' + i + 'Zeit', objekt.myZeit);
     localStorage.setItem('Gericht' + i + 'KAID', objekt.myKaId);
     }
     localStorage.setItem('GerichtANZAHL', Gerichtlist.length);
