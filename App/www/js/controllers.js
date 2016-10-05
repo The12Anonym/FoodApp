@@ -4,11 +4,13 @@ angular.module('starter.controllers', [])
             //alert("hallo");
         })
 
-        .controller('RezepteCtrl', function ($scope, rezepte, $stateParams, storage) {
-            
-            $scope.Gerichte = storage.gerichte();
+        .controller('RezepteCtrl', function ($scope, rezepte, $stateParams) {
             $scope.Rezepte = rezepte.all();
             $scope.rezept = rezepte.get($stateParams.rezeptId);
-            alert("test");
-            alert(storage.gerichte);
+        })
+
+        .controller('AddCtrl', function ($scope) {
+            
         });
+
+        

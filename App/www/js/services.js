@@ -1,37 +1,11 @@
 angular.module('starter.services', [])
 
-       .factory('rezepte', function (storage) {
+        .factory('rezepte', function () {
             // Might use a resource here that returns a JSON array
 
-            var rezepte2 = storage.gerichte;
+            var Lasagne = new Gericht('0', 'Lasagne', 'teig', 'lange', 'gut', 'ca 420 min','2.jpg', '2');
+            var rezepte = GetGerichte();
 
-            var rezepte = [{
-                    id: 0,
-                    name: 'Spaghetti',
-                    dauer: 'ca. 30 min',
-                    img: 'img/1.jpg'
-                            /* ,
-                             zubereitung: 'Lange kochen; salzen',
-                             zutaten: 'Nudelteig; Salz',
-                             beschreibung: 'ein traitionell italienischen Gericht',
-                             kategorie: '1' */
-                }, {
-                    id: 1,
-                    name: 'Lasagne',
-                    dauer: 'ca. 40 min',
-                    img: 'img/2.jpg'
-                }, {
-                    id: 2,
-                    name: 'Pizza',
-                    dauer: 'ca. 20 min',
-                    img: 'img/3.jpg'}];
-
-            //return rezepte;
-            
-            
-            
-            
-            
             return {
                 all: function () {
                     return rezepte;
