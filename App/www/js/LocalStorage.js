@@ -1,11 +1,9 @@
-angular.module('localstorage', [])
-.factory('storage', function() {
       
 
             var Gerichtlist = [];
             var Kategorielist = [];
 
-            function Gericht(GeId, GeName, GeZutaten, GeZubereitung, GeBeschreibung, GeZeit, KaId)
+            function Gericht(GeId, GeName, GeZutaten, GeZubereitung, GeBeschreibung, GeZeit, GeBild, KaId)
             {
                 this.myId = GeId;
                 this.myName = GeName;
@@ -13,6 +11,7 @@ angular.module('localstorage', [])
                 this.myZubereitung = GeZubereitung;
                 this.myBeschreibung = GeBeschreibung;
                 this.myZeit = GeZeit;
+                this.myBild = GeBild;
                 this.myKaId = KaId;
                 Gerichtlist.push(this);
             }
@@ -44,20 +43,20 @@ angular.module('localstorage', [])
                     var GeZutaten = localStorage.getItem('Gericht' + z + 'ZUTATEN');
                     var GeZubereitung = localStorage.getItem('Gericht' + z + 'ZUBEREITUNG');
                     var GeBeschreibung = localStorage.getItem('Gericht' + z + 'BESCHREIBUNG');
-                    var GeZeit = localStorage.getItem('Gericht' + z + 'Zeit');
+                    var GeZeit = localStorage.getItem('Gericht' + z + 'ZEIT');
+                    var GeBild = localStorage.getItem('Gericht' + z + 'BILD');
                     var KaId = localStorage.getItem('Gericht' + z + 'KAID');
-                    var Rezept = new Gericht(GeId, GeName, GeZutaten, GeZubereitung, GeBeschreibung, KaId);
+                    var Rezept = new Gericht(GeId, GeName, GeZutaten, GeZubereitung, GeBeschreibung, GeZeit, GeBild, KaId);
                 }
-
-                for (var w = 0, e = localStorage.getItem('KategorieANZAHL'); w < e; w++)
+                for (var w = 0, j = localStorage.getItem('KategorieANZAHL'); w < j; w++)
                 {
                     var KaId = localStorage.getItem('Kategorie' + w + 'ID');
                     var KaName = localStorage.getItem('Kategorie' + w + 'NAME');
-                    var categorie = new Kategorie(KaId, KaName);
+                    var cate = new Kategorie(KaId, KaName);
                 }
-                var testtest = Kategorielist[1];
-                var anzeige = document.getElementById('187');
-                anzeige.innerHTML = testtest.myName;
+                var testtest = Kategorielist[0];
+                var weed = document.getElementById('187');
+                weed.innerHTML = testtest.myName;
             }
 
             function WriteLocalStorage()
@@ -70,27 +69,27 @@ angular.module('localstorage', [])
                     localStorage.setItem('Gericht' + i + 'ZUTATEN', objekt.myZutaten);
                     localStorage.setItem('Gericht' + i + 'ZUBEREITUNG', objekt.myZubereitung);
                     localStorage.setItem('Gericht' + i + 'BESCHREIBUNG', objekt.myBeschreibung);
-                    localStorage.setItem('Gericht' + i + 'Zeit', objekt.myZeit);
+                    localStorage.setItem('Gericht' + i + 'ZEIT', objekt.myZeit);
+                    localStorage.setItem('Gericht' + i + 'BILD', objekt.myBild);
                     localStorage.setItem('Gericht' + i + 'KAID', objekt.myKaId);
                 }
                 localStorage.setItem('GerichtANZAHL', Gerichtlist.length);
 
                 for (var u = 0, b = Kategorielist.length; u < b; u++)
                 {
-                    var objekt = Kategorielist[u];
-                    localStorage.setItem('Kategorie' + u + 'ID', objekt.myId);
-                    localStorage.setItem('Kategorie' + u + 'NAME', objekt.myName);
+                    var objektk = Kategorielist[u];
+                    localStorage.setItem('Kategorie' + u + 'ID', objektk.myId);
+                    localStorage.setItem('Kategorie' + u + 'NAME', objektk.myName);
                 }
                 localStorage.setItem('KategorieANZAHL', Kategorielist.length);
             }
-            var bolognese = Gerichtlist[1];
-
-            return {
-                gerichte: function () {
-                    return Gerichtlist;
-                },
-                kategorien: function () {
-                    return Kategorielist;
-                }
-            };
-        });
+            
+            function GetGerichte()
+            {
+                return Gerichtlist;
+            }
+            function GetKategorien()
+            {
+                return Kategorielist;
+            }
+                
