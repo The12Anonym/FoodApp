@@ -1,3 +1,7 @@
+angular.module('localstorage', [])
+
+.factory('storage', function() {
+
 
 var Gerichtlist = [];
 var Kategorielist = [];
@@ -78,3 +82,5 @@ var Kategorielist = [];
     localStorage.setItem('KategorieANZAHL', Kategorielist.length);
     }
 var bolognese = Gerichtlist[1];
+
+});
