@@ -79,12 +79,10 @@
                     var KaName = localStorage.getItem('Kategorie' + w + 'NAME');
                     var cate = new Kategorie(KaId, KaName);
                 }
-<<<<<<< HEAD
                 var testtest = Kategorielist[0];
                 var weed = document.getElementById('187');
                 weed.innerHTML = "h";
-=======
->>>>>>> f02d235b708fbc0406a9e3c2d9bbad59d8820f12
+
             }
 
             function WriteLocalStorage()

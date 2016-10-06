@@ -1,5 +1,5 @@
 angular.module('starter.services', [])
-
+        
         .factory('rezepte', function () {
             
             // Rezepte
@@ -14,7 +14,11 @@ angular.module('starter.services', [])
                  rezepte[i].zubereitung = rezepte[i].zubereitung.split(';'); 
             }     
             
-
+            function addRezept (rezeptNew)
+            {
+                rezepte.push(rezeptNew);
+            }
+            
             return {
                 all: function () {
                     return rezepte;
