@@ -13,8 +13,9 @@ angular.module('starter.controllers', [])
         })
 
         .controller('AddCtrl', function ($scope) {
-
+            var x = $scope.add;
         })
+
 
         .controller("FilterCtrl", function FilterCtrl($scope) {
             $scope.query = {name: ""};
@@ -41,10 +42,8 @@ angular.module('starter.controllers', [])
                 }, function (err) {
                     // An error occured. Show a message to the user
                 });
-            }
-
+            };
         });
-;
 
 
 

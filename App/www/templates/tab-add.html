@@ -1,8 +1,39 @@
 <ion-view view-title="Rezept Hinzufügen">
     <ion-content>
         <div  data-ng-controller="AddCtrl">
-            <h1>{{add}}</h1>
+            <h1>Rezept Hinzufügen</h1>
         </div>
+        
+        <div class="list">
+
+  <label class="item item-input item-select">
+    <div class="input-label">
+      Kategorie
+    </div>
+    <select>
+      <option>Italienische Küche</option>
+      <option>Französische Gerichte</option>
+      <option>Vegetarisch</option>
+      <option>Dessert</option>
+    </select>
+  </label>
+
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">Zutaten:</span>
+    <input type="text" placeholder="500 Gramm Tomaten">
+  </label>
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">Zubereitung</span>
+    <input type="text" placeholder="Wasser aufkochen">
+  </label>
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">Beschreibung</span>
+    <input type="text" placeholder="Schwierigkeit: Einfach">
+  </label>
+            <button class="button button-full button-positive">
+  Rezept Hinzufügen
+</button>
+</div>
         
     </ion-content>
 </ion-view>
