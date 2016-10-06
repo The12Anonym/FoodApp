@@ -5,6 +5,9 @@ angular.module('starter.controllers', [])
         })
 
         .controller('RezepteCtrl', function ($scope, rezepte, $stateParams) {
+            $scope.Rezepte = rezepte.all();
+            $scope.rezept = rezepte.get($stateParams.rezeptId);
+            $scope.Kategorien = rezepte.getKat();
             $scope.Rezepte = rezepte.all(); // -- Rezepte Array
             $scope.rezept = rezepte.get($stateParams.rezeptId); // -- Rezept als Objekt
             $scope.Kategorien = rezepte.getKat(); // -- Kategorie Array
@@ -12,8 +15,12 @@ angular.module('starter.controllers', [])
             $scope.sort = {predicate: "name", reverse: false}; // -- Filterfunktion
         })
 
-        .controller('AddCtrl', function ($scope) {
-            var x = $scope.add;
+
+
+        .controller('AddCtrl', function ($scope, rezepte) {
+            $scope.add = function (){
+                addR($scope, rezepte);
+            };
         })
 
 
@@ -34,15 +41,17 @@ angular.module('starter.controllers', [])
                     targetWidth: 300,
                     targetHeight: 300,
                     popoverOptions: CameraPopoverOptions,
-                    saveToPhotoAlbum: false
+                    saveToPhotoAlbum: true
                 };
 
                 $cordovaCamera.getPicture(options).then(function (imageData) {
                     $scope.imgURI = "data:image/jpeg;base64," + imageData;
+                    alert($scope.imgURI);
                 }, function (err) {
-                    // An error occured. Show a message to the user
+                    alert(err);
                 });
             };
+
         });
 
 

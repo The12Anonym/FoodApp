@@ -1,6 +1,10 @@
 angular.module('starter.services', [])
-
+        
         .factory('rezepte', function () {
+            var k1 = new Kategorie('0','döner');
+    var k2 = new Kategorie('2','kalt');
+    var k3 = new Kategorie('1','desert');
+            
             
             // Rezepte
             var Lasagne = new Gericht('0', 'Lasagne', '500 g Teug; 1kg zocker', 'teig einlegen; sauce draufschmieren; kochen', 'gut', 'ca 30 min','2.jpg', '0');
@@ -10,11 +14,15 @@ angular.module('starter.services', [])
             var rezepte = GetGerichte();
             for (var i = 0; i < rezepte.length; i++)
             {
-                 rezepte[i].zutaten = rezepte[i].zutaten.split(';');
-                 rezepte[i].zubereitung = rezepte[i].zubereitung.split(';'); 
+                 rezepte[i].zutaten = rezepte[i].zutaten.split(',');
+                 rezepte[i].zubereitung = rezepte[i].zubereitung.split('.'); 
             }     
             
-
+            function addRezept (rezeptNew)
+            {
+                rezepte.push(rezeptNew);
+            }
+            
             return {
                 all: function () {
                     return rezepte;

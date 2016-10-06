@@ -79,6 +79,7 @@
                     var KaName = localStorage.getItem('Kategorie' + w + 'NAME');
                     var cate = new Kategorie(KaId, KaName);
                 }
+
             }
 
             function WriteLocalStorage()

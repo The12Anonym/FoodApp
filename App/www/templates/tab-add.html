@@ -1,39 +1,53 @@
 <ion-view view-title="Rezept Hinzufügen">
     <ion-content>
-        <div  data-ng-controller="AddCtrl">
-            <h1>Rezept Hinzufügen</h1>
-        </div>
-        
+
         <div class="list">
 
-  <label class="item item-input item-select">
-    <div class="input-label">
-      Kategorie
-    </div>
-    <select>
-      <option>Italienische Küche</option>
-      <option>Französische Gerichte</option>
-      <option>Vegetarisch</option>
-      <option>Dessert</option>
-    </select>
-  </label>
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Kategorie
+                </div>
+                <select id="KatAuswahl">
+                    <option value="1">Italienische Küche</option>
+                    <option value="2">Französische Gerichte</option>
+                    <option value="3">Vegetarisch</option>
+                    <option value="4">Dessert</option>
+                </select>
+            </label>
 
-  <label class="item item-input item-stacked-label">
-    <span class="input-label">Zutaten:</span>
-    <input type="text" placeholder="500 Gramm Tomaten">
-  </label>
-  <label class="item item-input item-stacked-label">
-    <span class="input-label">Zubereitung</span>
-    <input type="text" placeholder="Wasser aufkochen">
-  </label>
-  <label class="item item-input item-stacked-label">
-    <span class="input-label">Beschreibung</span>
-    <input type="text" placeholder="Schwierigkeit: Einfach">
-  </label>
-            <button class="button button-full button-positive">
-  Rezept Hinzufügen
-</button>
-</div>
-        
+            <div data-ng-controller="AddCtrl">
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Name:</span>
+                    <input type="text" placeholder="Spaghetti Bolognese" data-ng-model="NameIn">
+                </label>
+
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Zutaten:</span>
+                    <input type="text" placeholder="500 Gramm Tomaten" data-ng-model="ZutatenIn">
+                </label>
+
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Zubereitung</span>
+                    <input type="text" placeholder="Wasser aufkochen" data-ng-model="ZubereitungIn">
+                </label>
+
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Zubereitungszeit:</span>
+                    <input type="text" placeholder="35 Minuten" data-ng-model="DauerIn">
+                </label>
+
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Beschreibung</span>
+                    <input type="text" placeholder="Schwierigkeit: Einfach" data-ng-model="BeschreibungIn">
+                </label>
+                
+                <button ng-controller="ExampleController" class="button button-full button-neutral" ng-click="takePicture()">Take Picture</button>
+
+                <button class="button button-full button-positive" ng-click="add()">
+                    Rezept Hinzufügen
+                </button>
+            </div>
+        </div>
+
     </ion-content>
 </ion-view>
