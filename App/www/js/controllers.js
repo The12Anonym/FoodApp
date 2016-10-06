@@ -6,7 +6,9 @@ angular.module('starter.controllers', [])
 
         .controller('RezepteCtrl', function ($scope, rezepte, $stateParams) {
             $scope.Rezepte = rezepte.all();
+            //alert($stateParams.rezeptId);
             $scope.rezept = rezepte.get($stateParams.rezeptId);
+           // alert($scope.rezept);
         })
 
         .controller('AddCtrl', function ($scope) {

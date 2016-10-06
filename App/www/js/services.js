@@ -14,8 +14,8 @@ angular.module('starter.services', [])
                     rezepte.splice(rezepte.indexOf(rezept), 1);
                 },
                 get: function (rezeptId) {
-                    for (var i = 0; i < rezepte.length; i++) {
-                        if (rezepte[i].id === parseInt(rezeptId)) {
+                    for (var i = 0; i < rezepte.length; i++) {                        
+                        if (rezepte[i].id == parseInt(rezeptId)) {                            
                             return rezepte[i];
                         }
                     }
