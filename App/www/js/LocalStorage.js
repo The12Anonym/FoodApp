@@ -79,9 +79,6 @@
                     var KaName = localStorage.getItem('Kategorie' + w + 'NAME');
                     var cate = new Kategorie(KaId, KaName);
                 }
-                var testtest = Kategorielist[0];
-                var weed = document.getElementById('187');
-                weed.innerHTML = "h";
 
             }
 
