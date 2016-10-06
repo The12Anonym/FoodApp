@@ -15,7 +15,7 @@
                 this.kategorie = KaId;
                 Gerichtlist.push(this);
             }
-            Gericht.prototype.Kategorie = function ()
+            Gericht.prototype.GetKategorie = function ()
             {
                 for (var k = 0, len = Kategorielist.length; k < len; k++)
                 {
@@ -26,7 +26,9 @@
                     }
                 }
             };
-
+            
+            
+            
             function Kategorie(KaId, KaName)
             {
                 this.id = KaId;
@@ -54,9 +56,6 @@
                     var KaName = localStorage.getItem('Kategorie' + w + 'NAME');
                     var cate = new Kategorie(KaId, KaName);
                 }
-                var testtest = Kategorielist[0];
-                var weed = document.getElementById('187');
-                weed.innerHTML = testtest.name;
             }
 
             function WriteLocalStorage()

@@ -5,14 +5,21 @@ angular.module('starter.controllers', [])
         })
 
         .controller('RezepteCtrl', function ($scope, rezepte, $stateParams) {
+
+
             $scope.Rezepte = rezepte.all();
-            //alert($stateParams.rezeptId);
             $scope.rezept = rezepte.get($stateParams.rezeptId);
-           // alert($scope.rezept);
+            $scope.Kategorien = rezepte.getKat();
         })
 
         .controller('AddCtrl', function ($scope) {
-            
+
+        })
+
+        .controller('SearchCtrl', function ($scope) {
+            $scope.search = function () {
+            Search($scope);
+        };
         });
 
         
