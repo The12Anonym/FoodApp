@@ -6,7 +6,7 @@
             <h1>{{rezept}}</h1>
             
             <ion-list >                
-                <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="rezept in Rezepte" type="item-text-wrap" href="#/tab/details/{{rezept.id}}">                   
+                    <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="rezept in Rezepte" type="item-text-wrap" href="#/tab/details/{{rezept.id}}">                   
                     <img ng-src="img/{{rezept.img}}">
                     <h2>{{rezept.name}}</h2>
                     <p>{{rezept.dauer}}</p>

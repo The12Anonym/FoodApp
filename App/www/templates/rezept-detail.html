@@ -5,13 +5,26 @@
   The Friends service returns an array of friend data
 -->
 <div ng-controller="RezepteCtrl">
-<ion-view view-title="{{rezept.name}}">
-    <ion-content >
+    <ion-view view-title="{{rezept.name}}">
+        <ion-content >
             <div style="width: 90%; margin: 5%;">
-            <img data-ng-src="img/{{rezept.img}}" class="img-rounded" style="width: 100%; height: auto;">
-            <h2>{{rezept.name}}</h2>
-            <p>Dauer: {{rezept.dauer}}</p>
+                <img data-ng-src="img/{{rezept.img}}" class="img-rounded" style="width: 100%; height: auto;">
+                <h2>{{rezept.name}}</h2>
+                <p>Dauer: {{rezept.dauer}}</p>
+                <ion-item class="item-remove-animate item-avatar item-icon-right"  type="item-text-wrap">
+                    <h2>Zutaten</h2>
+                    <div ng-repeat="zutat in rezept.zutaten">
+                        <p>{{zutat}}</p>
+                    </div>                    
+                </ion-item>
+                
+                <ion-item class="item-remove-animate item-avatar item-icon-right"  type="item-text-wrap">
+                    <h2>Zubereitung</h2>
+                    <div ng-repeat="zubereitung in rezept.zubereitung">
+                        <p>{{zubereitung}}</p>
+                    </div>                    
+                </ion-item>
             </div>
-    </ion-content>
-</ion-view>
+        </ion-content>
+    </ion-view>
 </div>
