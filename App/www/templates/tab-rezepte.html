@@ -25,7 +25,7 @@
                             
                             <!-- ein ion-Item pro Rezept -->
                                 <ion-item class="item-remove-animate item-avatar item-icon-right"  type="item-text-wrap" href="#/tab/details/{{rezept.id}}">
-                                    <img ng-src="img/{{rezept.img}}">
+                                    <img ng-src="{{rezept.img}}"/>
                                     <h2>{{rezept.name}}</h2>
                                     <p>{{rezept.dauer}}</p>
                                     <i class="icon ion-chevron-right icon-accessory"></i>  

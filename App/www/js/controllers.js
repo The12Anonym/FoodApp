@@ -46,7 +46,7 @@ angular.module('starter.controllers', [])
 
                 $cordovaCamera.getPicture(options).then(function (imageData) {
                     $scope.imgURI = "data:image/jpeg;base64," + imageData;
-                    alert($scope.imgURI);
+                    SetImgDATAuri($scope.imgURI);
                 }, function (err) {
                     alert(err);
                 });
