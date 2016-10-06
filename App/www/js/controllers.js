@@ -5,14 +5,25 @@ angular.module('starter.controllers', [])
         })
 
         .controller('RezepteCtrl', function ($scope, rezepte, $stateParams) {
+
+
             $scope.Rezepte = rezepte.all();
-            //alert($stateParams.rezeptId);
             $scope.rezept = rezepte.get($stateParams.rezeptId);
-           // alert($scope.rezept);
+            $scope.Kategorien = rezepte.getKat();
         })
 
         .controller('AddCtrl', function ($scope) {
+<<<<<<< HEAD
             var x = $scope.add;
+=======
+
+        })
+
+        .controller('SearchCtrl', function ($scope) {
+            $scope.search = function () {
+            Search($scope);
+        };
+>>>>>>> f02d235b708fbc0406a9e3c2d9bbad59d8820f12
         });
 
         
