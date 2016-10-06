@@ -15,7 +15,7 @@
                 this.kategorie = KaId;
                 Gerichtlist.push(this);
             }
-            Gericht.prototype.Kategorie = function ()
+            Gericht.prototype.GetKategorie = function ()
             {
                 for (var k = 0, len = Kategorielist.length; k < len; k++)
                 {
@@ -33,7 +33,30 @@
                 this.name = KaName;
                 Kategorielist.push(this);
             }
-
+            
+           /* function sortlist(liste)
+            {
+                if (liste.length > 1)
+                {
+                var bool = false;
+                while(bool === false)
+                {
+                    bool = true;
+                    for (var i = 0; i < liste.length; i++)
+                    {
+                        if (liste[i].kategorie > liste[i+1].kategorie)
+                        {
+                            bool = false;
+                            var x = liste[i];
+                            liste[i] = liste[i+1];
+                            liste[i+1] = x;
+                        }
+                    }
+                }
+            }
+                return liste;
+            }*/
+            
             function ReadLocalStorage()
             {
                 for (var z = 0; z < localStorage.getItem('GerichtANZAHL'); z++)
@@ -56,7 +79,7 @@
                 }
                 var testtest = Kategorielist[0];
                 var weed = document.getElementById('187');
-                weed.innerHTML = testtest.name;
+                weed.innerHTML = "h";
             }
 
             function WriteLocalStorage()

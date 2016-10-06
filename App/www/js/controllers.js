@@ -12,7 +12,7 @@ angular.module('starter.controllers', [])
         })
 
         .controller('AddCtrl', function ($scope) {
-            
+            var x = $scope.add;
         });
 
         
