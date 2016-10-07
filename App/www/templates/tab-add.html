@@ -1,8 +1,10 @@
 <ion-view view-title="Rezept Hinzufügen">
     <ion-content>
-
+        <div id="AddRezeptSuccess" class="ng-hide bar bar-header bar-balanced">
+                <h1 class="title">Rezept hinzugefügt!</h1>
+            </div>
         <div class="list">
-
+            
             <label class="item item-input item-select">
                 <div class="input-label">
                     Kategorie
@@ -18,31 +20,35 @@
             <div data-ng-controller="AddCtrl">
                 <label class="item item-input item-stacked-label">
                     <span class="input-label">Name:</span>
-                    <input type="text" placeholder="Spaghetti Bolognese" data-ng-model="NameIn">
+                    <input id="Input1" type="text" placeholder="Spaghetti Bolognese" data-ng-model="NameIn">
                 </label>
 
                 <label class="item item-input item-stacked-label">
                     <span class="input-label">Zutaten:</span>
-                    <input type="text" placeholder="500 Gramm Tomaten" data-ng-model="ZutatenIn">
+                    <input id="Input2" type="text" placeholder="500 Gramm Tomaten" data-ng-model="ZutatenIn">
                 </label>
 
                 <label class="item item-input item-stacked-label">
                     <span class="input-label">Zubereitung</span>
-                    <input type="text" placeholder="Wasser aufkochen" data-ng-model="ZubereitungIn">
+                    <input id="Input3" type="text" placeholder="Wasser aufkochen" data-ng-model="ZubereitungIn">
                 </label>
 
                 <label class="item item-input item-stacked-label">
                     <span class="input-label">Zubereitungszeit:</span>
-                    <input type="text" placeholder="35 Minuten" data-ng-model="DauerIn">
+                    <input id="Input4" type="text" placeholder="35 Minuten" data-ng-model="DauerIn">
                 </label>
 
                 <label class="item item-input item-stacked-label">
                     <span class="input-label">Beschreibung</span>
-                    <input type="text" placeholder="Schwierigkeit: Einfach" data-ng-model="BeschreibungIn">
+                    <input id="Input5" type="text" placeholder="Schwierigkeit: Einfach" data-ng-model="BeschreibungIn">
                 </label>
-                
-                <button ng-controller="ExampleController" class="button button-full button-neutral" ng-click="takePicture()">Take Picture</button>
 
+                <button ng-controller="ExampleController" class="button button-full button-neutral" ng-click="takePicture()">Take Picture</button>
+                
+                <div id="AddImgSuccess" class="ng-hide bar bar-header bar-balanced">
+                <h1 class="title">Bild hinzugefügt!</h1>
+            </div>
+                
                 <button class="button button-full button-positive" ng-click="add()">
                     Rezept Hinzufügen
                 </button>

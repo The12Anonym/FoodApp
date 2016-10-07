@@ -1,3 +1,5 @@
+
+
 angular.module('starter.controllers', [])
 
         .controller('StartseiteCtrl', function ($scope) {
@@ -17,9 +19,10 @@ angular.module('starter.controllers', [])
 
 
 
-        .controller('AddCtrl', function ($scope, rezepte) {
+        .controller('AddCtrl', function ($scope) {
             $scope.add = function (){
-                addR($scope, rezepte);
+                addR($scope);
+                
             };
         })
 
@@ -46,7 +49,9 @@ angular.module('starter.controllers', [])
 
                 $cordovaCamera.getPicture(options).then(function (imageData) {
                     $scope.imgURI = "data:image/jpeg;base64," + imageData;
+                    alert("done coding");
                     SetImgDATAuri($scope.imgURI);
+                    alert($scope.imgURI);
                 }, function (err) {
                     alert(err);
                 });
