@@ -5,7 +5,7 @@ function addR($scope)
     var Gerichtlist = GetGerichte();
     var GerichtNew = new Gericht(Gerichtlist.length, $scope.NameIn, $scope.ZutatenIn, $scope.ZubereitungIn, $scope.BeschreibungIn, $scope.DauerIn, ImgDATAuri, KategorieIn);
     ResetInput();
-    rezept.addRezept(GerichtNew);
+
 
 }
 

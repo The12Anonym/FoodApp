@@ -20,10 +20,18 @@ angular.module('starter.controllers', [])
 
 
         .controller('AddCtrl', function ($scope) {
-            $scope.add = function (){
+            $scope.add = function () {
                 addR($scope);
-                
+
             };
+        })
+
+        .controller('dragCtrl', function ($scope,rezepte, $stateParams) {
+            $scope.func = function(id)
+    {
+        DeleteGericht(id);
+    };
+            
         })
 
 
