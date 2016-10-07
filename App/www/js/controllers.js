@@ -16,15 +16,14 @@ angular.module('starter.controllers', [])
             console.log("test");
         })
 
-
-
         .controller('AddCtrl', function ($scope) {
             $scope.add = function () {
                 addR($scope);
 
             };
         })
-
+        
+        // Gesten Controller
         .controller('dragCtrl', function ($scope, rezepte, $stateParams) {
             $scope.func = function (id)
             {
@@ -33,12 +32,13 @@ angular.module('starter.controllers', [])
 
         })
 
-
+        // Filter Controller
         .controller("FilterCtrl", function FilterCtrl($scope) {
             $scope.query = {name: ""};
             $scope.sort = {predicate: "name", reverse: false};
         })
 
+        // Kamera Controller
         .controller("ExampleController", function ($scope, $cordovaCamera) {
 
             $scope.takePicture = function () {

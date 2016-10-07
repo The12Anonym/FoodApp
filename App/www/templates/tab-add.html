@@ -4,7 +4,8 @@
             <h1 class="title">Rezept hinzugefügt!</h1>
         </div>
         <div class="list">
-
+            
+            <!-- DropDown für Kategorien -->
             <label class="item item-input item-select">
                 <div class="input-label">
                     Kategorie
@@ -19,7 +20,8 @@
                     <option value="7">Desserts</option>
                 </select>
             </label>
-
+            
+            <!-- Input Felder -->
             <div data-ng-controller="AddCtrl">
                 <label class="item item-input item-stacked-label">
                     <span class="input-label">Name:</span>
@@ -58,6 +60,7 @@
                 <button class="button button-full button-positive" ng-click="add()">
                     Rezept Hinzufügen
                 </button>
+                
 
             </div>
         </div>

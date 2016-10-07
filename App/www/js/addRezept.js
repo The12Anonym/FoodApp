@@ -9,17 +9,17 @@ function addR($scope)
     var arr = StrToArr(strArr);
     var GerichtNew = new Gericht(Gerichtlist.length, $scope.NameIn, arr[0], arr[1], $scope.BeschreibungIn, $scope.DauerIn, ImgDATAuri, KategorieIn);
     ResetInput();
-
+    WriteLocalStorage();
     console.log(GerichtNew);
 }
 
-
+// Auflistungsfunktion für neue Rezepte - neu = noch nicht im LocalStorage
 function StrToArr(str)
 {
     str[0].replace(', ', ',');
     str[0].replace(' ,', ',');
-    str[1].replace('. ', ',');
-    str[1].replace(' .', ',');
+    str[1].replace('. ', '.');
+    str[1].replace(' .', '.');
     // Ausfteilung der einzelnen Zutaten / Zubereitungsschritte
     str[0] = str[0].split(',');
     str[1] = str[1].split('.');

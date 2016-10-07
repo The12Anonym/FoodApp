@@ -1,9 +1,3 @@
-<!--
-  This template loads for the 'tab.friend-detail' state (app.js)
-  'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
-  The FriendsCtrl pulls data from the Friends service (service.js)
-  The Friends service returns an array of friend data
--->
 <div ng-controller="RezepteCtrl">
     <ion-view view-title="{{rezept.name}}">
         <ion-content >
@@ -11,13 +5,14 @@
                 <img data-ng-src="{{rezept.img}}" style="width: 100%; height: auto;">
                 <h2>{{rezept.name}}</h2>
                 <p>Dauer: {{rezept.dauer}}</p>
+                <!-- Zutaten -->
                 <ion-item class="item-remove-animate item-avatar item-icon-right"  type="item-text-wrap">
                     <h2>Zutaten</h2>
                     <div ng-repeat="zutat in rezept.zutaten">
                         <p>{{zutat}}</p>
                     </div>                    
                 </ion-item>
-                
+                <!-- Zubereitung -->
                 <ion-item class="item-remove-animate item-avatar item-icon-right"  type="item-text-wrap">
                     <h2>Zubereitung</h2>
                     <div ng-repeat="zubereitung in rezept.zubereitung">
