@@ -2,7 +2,7 @@
 
             var Gerichtlist = [];
             var Kategorielist = [];
-
+            
             function Gericht(GeId, GeName, GeZutaten, GeZubereitung, GeBeschreibung, GeZeit, GeBild, KaId)
             {
                 this.id = GeId;
@@ -59,8 +59,10 @@
                 return liste;
             }*/
             
+            
             function ReadLocalStorage()
             {
+                
                 for (var z = 0; z < localStorage.getItem('GerichtANZAHL'); z++)
                 {
                     var GeId = localStorage.getItem('Gericht' + z + 'ID');
@@ -81,7 +83,12 @@
                 }
 
             }
-
+            
+            function test()
+            {
+                alert("WEED");
+            }
+            
             function WriteLocalStorage()
             {
                 for (var i = 0, a = Gerichtlist.length; i < a; i++)
@@ -105,6 +112,30 @@
                     localStorage.setItem('Kategorie' + u + 'NAME', objektk.name);
                 }
                 localStorage.setItem('KategorieANZAHL', Kategorielist.length);
+            }
+            
+            function DeleteGericht(id)
+            {
+                id--;
+                localStorage.removeItem('Gericht' + id + 'ID');
+                localStorage.removeItem('Gericht' + id + 'NAME');
+                localStorage.removeItem('Gericht' + id + 'ZUTATEN');
+                localStorage.removeItem('Gericht' + id + 'ZUBEREITUNG');
+                localStorage.removeItem('Gericht' + id + 'BESCHREIBUNG');
+                localStorage.removeItem('Gericht' + id + 'ZEIT');
+                localStorage.removeItem('Gericht' + id + 'BILD');
+                localStorage.removeItem('Gericht' + id + 'KAID');
+                id++;
+                for(var x = 0, f = Gerichtlist.length;x < f;x++)
+                {
+                    var objekt1 = Gerichtlist[x];
+                    if(id == objekt1.id)
+                    {
+                        Gerichtlist.splice(x,1);
+                        removeRezept(x);
+                    }
+                }
+                localStorage.setItem('GerichtANZAHL', Gerichtlist.length);
             }
             
             function GetGerichte()

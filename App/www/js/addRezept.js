@@ -9,8 +9,10 @@ function addR($scope)
     var arr = StrToArr(strArr);
     var GerichtNew = new Gericht(Gerichtlist.length, $scope.NameIn, arr[0], arr[1], $scope.BeschreibungIn, $scope.DauerIn, ImgDATAuri, KategorieIn);
     ResetInput();
+
     console.log(GerichtNew);
 }
+
 
 function StrToArr(str)
 {

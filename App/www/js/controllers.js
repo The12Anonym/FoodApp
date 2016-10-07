@@ -25,6 +25,14 @@ angular.module('starter.controllers', [])
             };
         })
 
+        .controller('dragCtrl', function ($scope,rezepte, $stateParams) {
+            $scope.func = function(id)
+    {
+        DeleteGericht(id);
+    };
+            
+        })
+
 
         .controller("FilterCtrl", function FilterCtrl($scope) {
             $scope.query = {name: ""};

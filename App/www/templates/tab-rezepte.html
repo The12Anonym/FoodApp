@@ -12,7 +12,7 @@
                         <input type="search" placeholder="Rezepte durchsuchen" ng-model="query.name" class="form-control" id="queryName">
                     </label>
                 </div>
-            <ion-list>  
+            <ion-list show-delete="false" can-swipe="true">  
 
                 <div ng-repeat="kat in Kategorien">
                     <!-- Kategorien Header darstellen -->    
@@ -20,20 +20,22 @@
                         {{kat.name}}
                     </div>
 
-                    <div ng-repeat="rezept in Rezepte|filter: query|orderBy:sort.predicate:sort.reverse"> <!-- schfunktion - Filter -->
+                    <div ng-controller="dragCtrl" ng-repeat="rezept in Rezepte|filter: query|orderBy:sort.predicate:sort.reverse"> <!-- schfunktion - Filter -->
                         <div ng-if="rezept.kategorie === kat.id"> <!-- Falls das Rezept zu der aktuellen Kategorie gehört wird das rezept dargestellt -->
-                            
                             <!-- ein ion-Item pro Rezept -->
-                                <ion-item class="item-remove-animate item-avatar item-icon-right"  type="item-text-wrap" href="#/tab/details/{{rezept.id}}">
+                                <ion-item class="item-avatar" type="item-text-wrap" href="#/tab/details/{{rezept.id}}">
                                     <img ng-src="{{rezept.img}}"/>
                                     <h2>{{rezept.name}}</h2>
                                     <p>{{rezept.dauer}}</p>
-                                    <i class="icon ion-chevron-right icon-accessory"></i>  
+                                    
+                                    <ion-option-button class="button-light" ng-click="bearbeiten();">bearbeiten</ion-option-button>
+                                    <ion-option-button class="button-light" ng-click="func({{rezept.id}});">löschen</ion-option-button>
                                 </ion-item>
                         </div>
                     </div>
 
                 </div>
+                               
             </ion-list>
             
             
