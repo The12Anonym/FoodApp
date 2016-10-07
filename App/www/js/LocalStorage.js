@@ -129,4 +129,8 @@
             {
                 return Kategorielist;
             }
+            function SetImg(DATAurl)
+            {
+                
+            }
                 

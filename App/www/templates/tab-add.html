@@ -1,51 +1,59 @@
 <ion-view view-title="Rezept Hinzufügen">
     <ion-content>
-        
+        <div id="AddRezeptSuccess" class="ng-hide bar bar-header bar-balanced">
+                <h1 class="title">Rezept hinzugefügt!</h1>
+            </div>
         <div class="list">
+            
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Kategorie
+                </div>
+                <select id="KatAuswahl">
+                    <option value="1">Italienische Küche</option>
+                    <option value="2">Französische Gerichte</option>
+                    <option value="3">Vegetarisch</option>
+                    <option value="4">Dessert</option>
+                </select>
+            </label>
 
-  <label class="item item-input item-select">
-    <div class="input-label">
-      Kategorie
-    </div>
-    <select id="KatAuswahl">
-      <option value="1">Italienische Küche</option>
-      <option value="2">Französische Gerichte</option>
-      <option value="3">Vegetarisch</option>
-      <option value="4">Dessert</option>
-    </select>
-  </label>
+            <div data-ng-controller="AddCtrl">
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Name:</span>
+                    <input id="Input1" type="text" placeholder="Spaghetti Bolognese" data-ng-model="NameIn">
+                </label>
 
-<div data-ng-controller="AddCtrl">
-      <label class="item item-input item-stacked-label">
-    <span class="input-label">Name:</span>
-    <input type="text" placeholder="Spaghetti Bolognese" data-ng-model="NameIn">
-  </label>
-    
-  <label class="item item-input item-stacked-label">
-    <span class="input-label">Zutaten:</span>
-    <input type="text" placeholder="500 Gramm Tomaten" data-ng-model="ZutatenIn">
-  </label>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Zutaten:</span>
+                    <input id="Input2" type="text" placeholder="500 Gramm Tomaten" data-ng-model="ZutatenIn">
+                </label>
 
-  <label class="item item-input item-stacked-label">
-    <span class="input-label">Zubereitung</span>
-    <input type="text" placeholder="Wasser aufkochen" data-ng-model="ZubereitungIn">
-  </label>
-    
-      <label class="item item-input item-stacked-label">
-    <span class="input-label">Zubereitungszeit:</span>
-    <input type="text" placeholder="35 Minuten" data-ng-model="DauerIn">
-  </label>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Zubereitung</span>
+                    <input id="Input3" type="text" placeholder="Wasser aufkochen" data-ng-model="ZubereitungIn">
+                </label>
 
-  <label class="item item-input item-stacked-label">
-    <span class="input-label">Beschreibung</span>
-    <input type="text" placeholder="Schwierigkeit: Einfach" data-ng-model="BeschreibungIn">
-  </label>
-           
-            <button class="button button-full button-positive" ng-click="add()">
-  Rezept Hinzufügen
-</button>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Zubereitungszeit:</span>
+                    <input id="Input4" type="text" placeholder="35 Minuten" data-ng-model="DauerIn">
+                </label>
+
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Beschreibung</span>
+                    <input id="Input5" type="text" placeholder="Schwierigkeit: Einfach" data-ng-model="BeschreibungIn">
+                </label>
+
+                <button ng-controller="ExampleController" class="button button-full button-neutral" ng-click="takePicture()">Take Picture</button>
+                
+                <div id="AddImgSuccess" class="ng-hide bar bar-header bar-balanced">
+                <h1 class="title">Bild hinzugefügt!</h1>
+            </div>
+                
+                <button class="button button-full button-positive" ng-click="add()">
+                    Rezept Hinzufügen
+                </button>
+            </div>
         </div>
-</div>
-        
+
     </ion-content>
 </ion-view>

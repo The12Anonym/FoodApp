@@ -1,3 +1,5 @@
+
+
 angular.module('starter.controllers', [])
 
         .controller('StartseiteCtrl', function ($scope) {
@@ -15,12 +17,13 @@ angular.module('starter.controllers', [])
             $scope.sort = {predicate: "name", reverse: false}; // -- Filterfunktion
         })
 
-        .controller('AddCtrl', function ($scope, rezepte) {
+
+
+        .controller('AddCtrl', function ($scope) {
             $scope.add = function (){
-                addR($scope, rezepte);
+                addR($scope);
+                
             };
-
-
         })
 
 
@@ -41,13 +44,16 @@ angular.module('starter.controllers', [])
                     targetWidth: 300,
                     targetHeight: 300,
                     popoverOptions: CameraPopoverOptions,
-                    saveToPhotoAlbum: false
+                    saveToPhotoAlbum: true
                 };
 
                 $cordovaCamera.getPicture(options).then(function (imageData) {
                     $scope.imgURI = "data:image/jpeg;base64," + imageData;
+                    alert("done coding");
+                    SetImgDATAuri($scope.imgURI);
+                    alert($scope.imgURI);
                 }, function (err) {
-                    // An error occured. Show a message to the user
+                    alert(err);
                 });
             };
 

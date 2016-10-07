@@ -4,8 +4,8 @@
     <ion-content >
         <div  ng-controller="RezepteCtrl">
             <h1>{{rezept}}</h1>
-            <!-- Suchfunktion -->
             
+            <!-- Suchfunktion -->            
                 <div class="bar bar-header item-input-inset">
                     <label class="item-input-wrapper" placeholder="Search a user" filter="search">
                         <i class="icon ion-ios7-search placeholder-icon"></i>
@@ -23,8 +23,9 @@
                     <div ng-repeat="rezept in Rezepte|filter: query|orderBy:sort.predicate:sort.reverse"> <!-- schfunktion - Filter -->
                         <div ng-if="rezept.kategorie === kat.id"> <!-- Falls das Rezept zu der aktuellen Kategorie gehört wird das rezept dargestellt -->
                             
+                            <!-- ein ion-Item pro Rezept -->
                                 <ion-item class="item-remove-animate item-avatar item-icon-right"  type="item-text-wrap" href="#/tab/details/{{rezept.id}}">
-                                    <img ng-src="img/{{rezept.img}}">
+                                    <img ng-src="{{rezept.img}}"/>
                                     <h2>{{rezept.name}}</h2>
                                     <p>{{rezept.dauer}}</p>
                                     <i class="icon ion-chevron-right icon-accessory"></i>  
@@ -34,7 +35,7 @@
 
                 </div>
             </ion-list>
-            <button ng-controller="ExampleController" class="button" ng-click="takePicture()">Take Picture</button>
+            
             
         </div>
     </ion-content>
