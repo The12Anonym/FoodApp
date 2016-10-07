@@ -2,7 +2,7 @@
 
             var Gerichtlist = [];
             var Kategorielist = [];
-
+            
             function Gericht(GeId, GeName, GeZutaten, GeZubereitung, GeBeschreibung, GeZeit, GeBild, KaId)
             {
                 this.id = GeId;
@@ -58,7 +58,7 @@
             }
                 return liste;
             }*/
-            
+
             function ReadLocalStorage()
             {
                 for (var z = 0; z < localStorage.getItem('GerichtANZAHL'); z++)
@@ -105,6 +105,20 @@
                     localStorage.setItem('Kategorie' + u + 'NAME', objektk.name);
                 }
                 localStorage.setItem('KategorieANZAHL', Kategorielist.length);
+            }
+            
+            function DeleteGericht(id)
+            {
+                id--;
+                localStorage.removeItem('Gericht' + id + 'ID');
+                localStorage.removeItem('Gericht' + id + 'NAME');
+                localStorage.removeItem('Gericht' + id + 'ZUTATEN');
+                localStorage.removeItem('Gericht' + id + 'ZUBEREITUNG');
+                localStorage.removeItem('Gericht' + id + 'BESCHREIBUNG');
+                localStorage.removeItem('Gericht' + id + 'ZEIT');
+                localStorage.removeItem('Gericht' + id + 'BILD');
+                localStorage.removeItem('Gericht' + id + 'KAID');
+                WriteLocalStorage();
             }
             
             function GetGerichte()
