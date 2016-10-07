@@ -25,12 +25,12 @@ angular.module('starter.controllers', [])
             };
         })
 
-        .controller('dragCtrl', function ($scope,rezepte, $stateParams) {
-            $scope.func = function(id)
-    {
-        DeleteGericht(id);
-    };
-            
+        .controller('dragCtrl', function ($scope, rezepte, $stateParams) {
+            $scope.func = function (id)
+            {
+                DeleteGericht(id);
+            };
+
         })
 
 
@@ -59,30 +59,6 @@ angular.module('starter.controllers', [])
                     SetImgDATAuri($scope.imgURI);
                 }, function (err) {
                     alert(err);
-                });
-            };
-
-        })
-        .controller('ImagePickerController', function ($scope, $cordovaImagePicker) {
-            $scope.getImageSaveContact = function () {
-                // Image picker will load images according to these settings
-                var options = {
-                    maximumImagesCount: 1, // Max number of selected images, I'm using only one for this example
-                    width: 800,
-                    height: 800,
-                    quality: 95,
-                    encodingType: Camera.EncodingType.JPEG// Higher is better
-                };
-
-                $cordovaImagePicker.getPictures(options).then(function (results) {
-                    // Loop through acquired images
-                        var imageData=$base64.encode(results);
-                        $scope.imgURI = "data:image/jpeg;base64," + imageData;
-                        SetImgDATAuri($scope.imgURI);
-                        alert($scope.imgURI);// Print image URI
-                    
-                }, function (error) {
-                    alert (error);  // In case of error
                 });
             };
 
