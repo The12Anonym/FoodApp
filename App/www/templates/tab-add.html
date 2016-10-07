@@ -1,36 +1,39 @@
 <ion-view view-title="Rezept Hinzufügen">
     <ion-content>
         <div id="AddRezeptSuccess" class="ng-hide bar bar-header bar-balanced">
-                <h1 class="title">Rezept hinzugefügt!</h1>
-            </div>
+            <h1 class="title">Rezept hinzugefügt!</h1>
+        </div>
         <div class="list">
-            
+
             <label class="item item-input item-select">
                 <div class="input-label">
                     Kategorie
                 </div>
                 <select id="KatAuswahl">
-                    <option value="1">Italienische Küche</option>
-                    <option value="2">Französische Gerichte</option>
+                    <option value="1">Salat</option>
+                    <option value="2">Vorspeise</option>
                     <option value="3">Vegetarisch</option>
-                    <option value="4">Dessert</option>
+                    <option value="4">Fleischgericht</option>
+                    <option value="5">Fischgericht</option>
+                    <option value="6">Kuchen</option>
+                    <option value="7">Desserts</option>
                 </select>
             </label>
 
             <div data-ng-controller="AddCtrl">
                 <label class="item item-input item-stacked-label">
                     <span class="input-label">Name:</span>
-                    <input id="Input1" type="text" placeholder="Spaghetti Bolognese" data-ng-model="NameIn">
+                    <input id="Input1" type="text" placeholder="Rezeptname" data-ng-model="NameIn">
                 </label>
 
                 <label class="item item-input item-stacked-label">
                     <span class="input-label">Zutaten:</span>
-                    <input id="Input2" type="text" placeholder="500 Gramm Tomaten" data-ng-model="ZutatenIn">
+                    <input id="Input2" type="text" placeholder="Zutat 1, Zutat 2, Zutat 3 ..." data-ng-model="ZutatenIn">
                 </label>
 
                 <label class="item item-input item-stacked-label">
                     <span class="input-label">Zubereitung</span>
-                    <input id="Input3" type="text" placeholder="Wasser aufkochen" data-ng-model="ZubereitungIn">
+                    <input id="Input3" type="text" placeholder="Schritt1. Schritt 2. Schritt 3 ..." data-ng-model="ZubereitungIn">
                 </label>
 
                 <label class="item item-input item-stacked-label">
@@ -42,16 +45,22 @@
                     <span class="input-label">Beschreibung</span>
                     <input id="Input5" type="text" placeholder="Schwierigkeit: Einfach" data-ng-model="BeschreibungIn">
                 </label>
-
-                <button ng-controller="ExampleController" class="button button-full button-neutral" ng-click="takePicture()">Take Picture</button>
                 
+                <!-- Bild aufnehmen -->
+                <button ng-controller="ExampleController" class="button button-full button-neutral" ng-click="takePicture()">Bild aufnehmen</button>               
+                <!-- Bild auswählen -->
+                <button ng-controller="ImagePickerController" class="button button-full button-neutral" ng-click="getImageSaveContact()">Bild auswählen</button>
+                <!-- Success Nachricht -->
                 <div id="AddImgSuccess" class="ng-hide bar bar-header bar-balanced">
-                <h1 class="title">Bild hinzugefügt!</h1>
-            </div>
+                    <h1 class="title">Bild hinzugefügt!</h1>
+                </div>
                 
+                <img ng-src="{{collection.selectedImage}}" style="width:100%; height: auto;"/>
+    
                 <button class="button button-full button-positive" ng-click="add()">
                     Rezept Hinzufügen
                 </button>
+
             </div>
         </div>
 

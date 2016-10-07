@@ -1,7 +1,7 @@
 {
-  "name": "app",
+  "name": "FoodApp",
   "version": "1.1.1",
-  "description": "App: An Ionic project",
+  "description": "Ionic Scool project by Luc Bärtschi & Lukas gruber",
   "dependencies": {
     "gulp": "^3.5.6",
     "gulp-sass": "^2.0.4",
